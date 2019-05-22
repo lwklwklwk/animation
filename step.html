@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="main" class="container">
+    <div style="position:relative"> 
+      <img src="./step.svg" alt="">
+      <div class="slider"></div>
+    </div>
+  </div>
+</body>
+</html>
+<script  src='./navigate.js'></script>
+<script>
+var a=document.getElementById('main').insertAdjacentHTML('afterbegin',html)
+</script>
+<style>
+.container{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.slider{
+  position: absolute;
+  right: -16.6%;
+  top: 0;
+  height: 110px;
+  background-color: #fff;
+  animation: go 6s steps(7,end) forwards infinite;
+  /* border-left: 1px solid; */
+}
+@keyframes go{
+  from{
+    width: 116.6%;
+  }
+
+  to{
+    width: 0
+  }
+}
+</style>

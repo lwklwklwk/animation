@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="main" class="container">
+    <div class="background">
+      <div class="music"></div>
+    </div>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+  </div>
+</body>
+</html>
+<script  src='./navigate.js'></script>
+<script>
+  let music=document.getElementsByClassName('music')[0];
+  console.log(music)
+  document.getElementById('start').addEventListener('click',function(e){
+    console.log(e)
+    music.className='music'
+  })
+  document.getElementById('stop').addEventListener('click',function(e){
+    console.log(music)
+    music.className='music stop'
+  })
+  var a=document.getElementById('main').insertAdjacentHTML('afterbegin',html)
+</script>
+<style>
+  *{
+    padding: 0;
+    margin: 0;
+  }
+  .container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .background{
+    width: 500px;
+    height:60px;
+    background-color: black;
+    display:flex;
+    align-items: center;
+    justify-content: center
+  }
+  .music{
+    width:18px;
+    height:13px;
+    background-image: url("./music.png");
+    background-position: -25px 0 ;
+    animation:music 1s steps(1,start) infinite;
+  }
+  .stop{
+    animation-play-state:paused
+  }
+  @keyframes music {
+    from{
+				background-position: 0 0;
+			}
+			10%{
+				background-position: -25px 0;
+			}
+			20%{
+				background-position: -50px 0;
+			}
+			30%{
+				background-position: -75px 0;
+			}
+			40%{
+				background-position: -100px 0;
+			}
+			50%{
+				background-position: 0px -19px;
+			}
+			60%{
+				background-position: -25px -19px
+			}
+			70%{
+				background-position: -50px -19px
+			}
+			80%{
+				background-position: -75px -19px
+			}
+			90%{
+				background-position: -100px -19px
+			}
+			to{
+				background-position: 0 0;
+			}
+  }
+</style>
